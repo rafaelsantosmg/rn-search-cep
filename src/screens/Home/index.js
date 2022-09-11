@@ -153,13 +153,14 @@ const styles = StyleSheet.create({
     padding: 6,
   },
   buttonContainer: {
+    alignSelf: "center",
     flexDirection: "row",
     backgroundColor: "#478203",
     justifyContent: "space-around",
-    width: "100%",
+    width: "90%",
     paddingTop: 5,
     marginTop: 10,
-    marginBottom: 5,
+    marginBottom: 20,
   },
   activeTouchable: {
     borderBottomWidth: 3,

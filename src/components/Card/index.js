@@ -14,7 +14,11 @@ const Card = ({ ceps, primary }) => {
         <View style={styles.container} key={index}>
           <Text style={styles.text}>CEP: {cep}</Text>
           <Text style={styles.text}>Cidade: {localidade}</Text>
-          <Text style={styles.text}>Endereço: {logradouro}</Text>
+          <Text style={styles.text}>
+            {logradouro.length !== 0
+              ? `Endereço: ${logradouro}`
+              : "Cep único para toda cidade!"}
+          </Text>
         </View>
       ));
 };
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flex: 1,
     flexDirection: "column",
-    marginTop: 15,
+    marginBottom: 20,
     padding: 15,
     width: "80%",
   },
