@@ -8,10 +8,10 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import Card from "../../components/Card";
+import CardView from "../../components/CardView";
 import { getCep } from "../../services/index";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [cep, setCep] = useState("");
   const [activeScreen, setActiveScreen] = useState("primary");
   const [listCeps, setListCeps] = useState([]);
@@ -105,9 +105,9 @@ const Home = () => {
         </TouchableOpacity>
       </View>
       {listCeps.length !== 0 && activeScreen === "primary" ? (
-        <Card ceps={listCeps} primary />
+        <CardView ceps={listCeps} primary navigation={navigation} />
       ) : (
-        <Card ceps={listCeps} />
+        <CardView ceps={listCeps} navigation={navigation} />
       )}
     </ScrollView>
   );
