@@ -1,24 +1,19 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
-const teste = {
-  cep: "03568-000",
-  logradouro: "Avenida Sport Club Corinthians Paulista",
-  complemento: "",
-  bairro: "Parque Artur Alvim",
-  localidade: "São Paulo",
-  uf: "SP",
-  ibge: "3550308",
-  gia: "1004",
-  ddd: "11",
-  siafi: "7107",
-};
-
 const CardDetails = ({ route }) => {
   console.log(route.params);
-  const { bairro, cep, complemento, ddd, localidade, logradouro, uf } =
-    route.params;
-
+  const {
+    bairro,
+    cep,
+    complemento,
+    ddd,
+    localidade,
+    logradouro,
+    uf,
+    cardName,
+  } = route.params;
+  console.log(cardName);
   return (
     <View style={{ backgroundColor: "#F6E48A", flex: 1 }}>
       <View style={{ marginLeft: 20, marginRight: 20, marginTop: 20 }}>
@@ -27,6 +22,9 @@ const CardDetails = ({ route }) => {
         </Text>
       </View>
       <View style={styles.container}>
+        <Text style={{ ...styles.title, textAlign: "center" }}>
+          {cardName ? "Listagen UF - Cidade" : "Listagen Cidade - Logradouro"}
+        </Text>
         <Text style={styles.text}>CEP: {cep}</Text>
         <Text style={styles.text}>UF: {uf}</Text>
         <Text style={styles.text}>Cidade: {localidade}</Text>

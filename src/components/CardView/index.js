@@ -7,7 +7,9 @@ const CardView = ({ navigation, ceps, primary }) => {
         <Card
           style={styles.container}
           key={index}
-          onPress={() => navigation.navigate("Detail", cepDetail)}
+          onPress={() =>
+            navigation.navigate("Detalhes", { ...cepDetail, cardName: primary })
+          }
         >
           <Card.Content>
             <Text style={styles.text}>CEP: {cepDetail.cep}</Text>
@@ -17,11 +19,15 @@ const CardView = ({ navigation, ceps, primary }) => {
         </Card>
       ))
     : ceps.map((cepDetail, index) => (
-        <Card style={styles.container} key={index}>
+        <Card
+          style={styles.container}
+          key={index}
+          onPress={() => navigation.navigate("Detail", cepDetail)}
+        >
           <Text style={styles.text}>CEP: {cepDetail.cep}</Text>
           <Text style={styles.text}>Cidade: {cepDetail.localidade}</Text>
           <Text style={styles.text}>
-            {logradouro.length !== 0
+            {cepDetail.logradouro.length !== 0
               ? `Endereço: ${cepDetail.logradouro}`
               : "Cep único para toda cidade!"}
           </Text>

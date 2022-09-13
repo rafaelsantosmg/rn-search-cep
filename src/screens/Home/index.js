@@ -13,6 +13,7 @@ import { getCep } from "../../services/index";
 
 const Home = ({ navigation }) => {
   const [cep, setCep] = useState("");
+  const [count, setCount] = useState(0);
   const [activeScreen, setActiveScreen] = useState("primary");
   const [listCeps, setListCeps] = useState([]);
   const [isRender, setIsRender] = useState(false);
@@ -35,6 +36,7 @@ const Home = ({ navigation }) => {
   };
 
   useEffect(() => {
+    setCount(listCeps.length);
     setListCeps(listCeps);
   }, [isRender]);
 
@@ -65,6 +67,9 @@ const Home = ({ navigation }) => {
         >
           <Text style={styles.textAdd}>ADICIONAR</Text>
         </TouchableOpacity>
+      </View>
+      <View style={{ alignItems: "center" }}>
+        <Text style={styles.text}>Número de pesquisas: {count}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity

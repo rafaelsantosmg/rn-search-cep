@@ -13,12 +13,26 @@ const Router = () => {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerShown: false }}
+          options={{
+            headerTitleAlign: "center",
+            headerStyle: { backgroundColor: "#c6ab31" },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
         />
         <Stack.Screen
-          name="Detail"
+          name="Detalhes"
           component={CardDetails}
-          options={{ headerShown: false }}
+          options={{
+            headerTitleAlign: "center",
+            headerStyle: { backgroundColor: "#c6ab31" },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
