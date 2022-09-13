@@ -2,7 +2,6 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 const CardDetails = ({ route }) => {
-  console.log(route.params);
   const {
     bairro,
     cep,
@@ -13,7 +12,7 @@ const CardDetails = ({ route }) => {
     uf,
     cardName,
   } = route.params;
-  console.log(cardName);
+
   return (
     <View style={{ backgroundColor: "#F6E48A", flex: 1 }}>
       <View style={{ marginLeft: 20, marginRight: 20, marginTop: 20 }}>
